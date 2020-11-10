@@ -91,7 +91,8 @@ const getPokemons = () => {
     fetch(`${baseUrl}${randomNumber}`)
         .then(response => response.json())
         .then(response => {
-            createCard(response) 
+            createCard(response)
+            response ? errorMessage.innerHTML = '' : pokedex.style.visibility = 'hidden' 
         })
 
 }
